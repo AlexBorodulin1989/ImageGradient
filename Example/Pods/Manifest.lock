@@ -1,0 +1,16 @@
+PODS:
+  - ImageGradient (0.1.0)
+
+DEPENDENCIES:
+  - ImageGradient (from `../`)
+
+EXTERNAL SOURCES:
+  ImageGradient:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ImageGradient: 5df3b9c7dffd8555f9f457da84be01dba2c95fc9
+
+PODFILE CHECKSUM: e2ee9b6b7bd792b0b92ae293f4c0076bdaaefaa2
+
+COCOAPODS: 1.5.3

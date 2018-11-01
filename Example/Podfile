@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ImageGradient_Example' do
+  pod 'ImageGradient', :path => '../'
+
+  target 'ImageGradient_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
