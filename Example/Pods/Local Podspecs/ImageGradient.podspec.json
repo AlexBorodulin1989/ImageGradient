@@ -1,22 +1,22 @@
 {
   "name": "ImageGradient",
   "version": "0.1.0",
-  "summary": "A short description of ImageGradient.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/UserXMetrica/ImageGradient",
+  "summary": "An image wich is displayed as gradient.",
+  "homepage": "https://github.com/AlexBorodulin1989/ImageGradient",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "UserXMetrica": "aleks.borodulin@just.ru.…\naleks.borodulin@just.ru.…\naleks.borodulin@just.ru.…\naleks.borodulin@just.ru.…\naleks.borodulin@just.ru.…\naleks.borodulin@just.ru.com\naleks.borodulin@just.ru.com\naleks.borodulin@just.ru.com"
+    "Aleksandr Borodulin": "aleksanderborodoolin@mail.ru"
   },
   "source": {
-    "git": "https://github.com/UserXMetrica/ImageGradient.git",
+    "git": "https://github.com/AlexBorodulin1989/ImageGradient.git",
     "tag": "0.1.0"
   },
+  "swift_version": "4.0",
   "platforms": {
-    "ios": "8.0"
+    "ios": "12.0"
   },
-  "source_files": "ImageGradient/Classes/**/*"
+  "source_files": "ImageGradient/Classes/**/*.{swift,metal}"
 }

@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'ImageGradient/Classes/**/*'
+  s.source_files = 'ImageGradient/Classes/**/*.{swift,metal}'
 end
