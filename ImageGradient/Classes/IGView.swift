@@ -7,15 +7,15 @@ import QuartzCore
 
 class IGView: UIView {
 #if !targetEnvironment(simulator)
-    let pixelFormat: MTLPixelFormat = .bgra8Unorm
+    private let pixelFormat: MTLPixelFormat = .bgra8Unorm
     
-    var device: MTLDevice! = nil
-    var metalLayer: CAMetalLayer! = nil
-    var vBuffer: MTLBuffer! = nil
-    var pipelineState: MTLRenderPipelineState! = nil
-    var commandQueue: MTLCommandQueue! = nil
+    private var device: MTLDevice! = nil
+    private var metalLayer: CAMetalLayer! = nil
+    private var vBuffer: MTLBuffer! = nil
+    private var pipelineState: MTLRenderPipelineState! = nil
+    private var commandQueue: MTLCommandQueue! = nil
     
-    var timer: CADisplayLink! = nil
+    private var timer: CADisplayLink! = nil
     
     struct RuntimeError: Error {
         let message: String
@@ -39,7 +39,7 @@ class IGView: UIView {
         initialize()
     }
     
-    func initialize() {
+    private func initialize() {
         device = MTLCreateSystemDefaultDevice()
         commandQueue = device.makeCommandQueue()
         //self.backgroundColor = UIColor.blue
@@ -56,7 +56,7 @@ class IGView: UIView {
         }
     }
     
-    func initMetalLayer() {
+    private func initMetalLayer() {
         
         metalLayer = CAMetalLayer()
         metalLayer.device = device
@@ -67,7 +67,7 @@ class IGView: UIView {
         self.layer.addSublayer(metalLayer)
     }
     
-    func initData() {
+    private func initData() {
         let vertexData:[Float] = [
             -1.0, -1.0, 0.5,
             -1.0, 1.0, 0.5,
@@ -81,7 +81,7 @@ class IGView: UIView {
         vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModePrivate)
     }
     
-    func initPipeline() throws {
+    private func initPipeline() throws {
         guard let bundle = Bundle(identifier: "org.cocoapods.ImageGradient"),
             let path = bundle.path(forResource: "default", ofType: "metallib")
             else { return }
@@ -96,17 +96,17 @@ class IGView: UIView {
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = pixelFormat
         
         pipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true
-        pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add//MTLBlendOperationAdd;
-        pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add//MTLBlendOperationAdd;
-        pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha//MTLBlendFactorSourceAlpha;
-        pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha//MTLBlendFactorOneMinusSourceAlpha;
-        pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha//MTLBlendFactorSourceAlpha;
-        pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha//MTLBlendFactorOneMinusSourceAlpha;
+        pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add
+        pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add
+        pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha
+        pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
+        pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
+        pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
         
         try pipelineState = device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
     }
     
-    func render() {
+    private func render() {
         autoreleasepool {
             let renderPassDescriptor = MTLRenderPassDescriptor()
             guard let drawable = metalLayer.nextDrawable() else { return }

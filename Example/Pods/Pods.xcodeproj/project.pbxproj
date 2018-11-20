@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		002055747FF0A2F304B88A20211D82C0 /* Pods-ImageGradient_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 973D304B443DF89556D79468BE1F0E43 /* Pods-ImageGradient_Tests-dummy.m */; };
-		25D0F242606876846CC9C42C322ED730 /* GradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = F8E9110C39160CDA6681B4A02BD79236 /* GradientShader.metal */; };
-		3681A71B92463B91E6D66568257E8B0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		3FC41F3E00751DF37F3FD57E51F3B92F /* IGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F102417E5CB4D1D5ECC2F4C76EA9D1 /* IGView.swift */; };
-		4CFBE0710070C0329517E70BCEAD4DE2 /* ImageGradient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B515BAD4EEA579ADC70CF65B091DC /* ImageGradient-dummy.m */; };
+		283350CA39D4ED6B677BE0F8E2223528 /* GradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 959ACADA9AC011D55AC1E75ACF83459F /* GradientShader.metal */; };
+		2E5BB6499339D8B1D8696C32015C8FAD /* IGTextugeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550AA2450B973E9D37DB9F14E3C2211C /* IGTextugeMaker.swift */; };
 		5B2338D78AF7F0D38A146AEEC8B0ECE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		60DFC463FA4F9A2B23B2A116CEFD1DC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		84A26AE67ABF46BF789C574A20F44DD9 /* ImageGradient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F645C80C984D9800109584519EC67CA /* ImageGradient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6214FC8C4DDF54460287BE652FB84883 /* IGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF233786A5482D0188ECC471EF36A /* IGView.swift */; };
 		A6A159FADC8C9EB6483095099828E68F /* Pods-ImageGradient_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A594609FCFECC4D0FE5391C0C5FDC50 /* Pods-ImageGradient_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD0B4F5900FA6E900276B66DA5838F5B /* Pods-ImageGradient_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5499666E95AE878E07A3C016E130932B /* Pods-ImageGradient_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBF13F5CA8B22493C84BD13BE4EB71FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		F8C88A99AB18EBCDE822FE8616B0F351 /* ImageGradient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D039D3A018BEEB0A82347B0B57FF72 /* ImageGradient-dummy.m */; };
+		F97D1AB8C8998D47AB091DD4FEAF5AC9 /* ImageGradient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C58C4A286B8929169A84E2FF95F4770 /* ImageGradient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA87B8B03CE3BA2606277CE83A1DF096 /* Pods-ImageGradient_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EBD935822D12CEADECFD0C466BCB1 /* Pods-ImageGradient_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -32,48 +33,49 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C4B37B24755DE4BF7CC2622BFDBC2195;
+			remoteGlobalIDString = C5E093BFE4BDC67DD923BC07D0FE023A;
 			remoteInfo = ImageGradient;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		081463442C6351D04A0C0490CBCB0ADA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0A972AB5523C5DEE4EEF661068EEA518 /* Pods_ImageGradient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageGradient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0233F9470EB4334177E348564ADA8BC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A972AB5523C5DEE4EEF661068EEA518 /* Pods_ImageGradient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImageGradient_Tests.framework; path = "Pods-ImageGradient_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FEBF233786A5482D0188ECC471EF36A /* IGView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IGView.swift; path = ImageGradient/Classes/IGView.swift; sourceTree = "<group>"; };
 		1492C3C16959F6288784DAC09E0CC257 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		190BCF9CBA79FFD6B4FBA0A88C52A27D /* Pods-ImageGradient_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ImageGradient_Tests.modulemap"; sourceTree = "<group>"; };
 		1A594609FCFECC4D0FE5391C0C5FDC50 /* Pods-ImageGradient_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ImageGradient_Example-umbrella.h"; sourceTree = "<group>"; };
 		20393C0C080216F5326A8E533206CBC3 /* Pods-ImageGradient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImageGradient_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3344E18812772887594EC354477772D6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3C58C4A286B8929169A84E2FF95F4770 /* ImageGradient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageGradient-umbrella.h"; sourceTree = "<group>"; };
 		3F7EB62801C7716A9822EF59384CDF34 /* Pods-ImageGradient_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImageGradient_Example-frameworks.sh"; sourceTree = "<group>"; };
-		53EB10FBAC8401C324C8C8EA82C19E4A /* ImageGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8432E90FDB86F47E9062B93643304C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		51C12D42E00D63E482CBBCEAFB73BFE8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		53EB10FBAC8401C324C8C8EA82C19E4A /* ImageGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImageGradient.framework; path = ImageGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5499666E95AE878E07A3C016E130932B /* Pods-ImageGradient_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ImageGradient_Tests-umbrella.h"; sourceTree = "<group>"; };
+		550AA2450B973E9D37DB9F14E3C2211C /* IGTextugeMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IGTextugeMaker.swift; path = ImageGradient/Classes/IGTextugeMaker.swift; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5C0EC1F434E97ABA2615592FDE5A76D1 /* Pods-ImageGradient_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ImageGradient_Example.modulemap"; sourceTree = "<group>"; };
 		64A14C08A81B0A744A517807C04E42E1 /* Pods-ImageGradient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImageGradient_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71785166EAED2869532DC912CEB8A030 /* Pods-ImageGradient_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImageGradient_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		785B515BAD4EEA579ADC70CF65B091DC /* ImageGradient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageGradient-dummy.m"; sourceTree = "<group>"; };
+		73EF09BDB3597780621BF7EB41235969 /* ImageGradient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageGradient-prefix.pch"; sourceTree = "<group>"; };
 		7E3EBD935822D12CEADECFD0C466BCB1 /* Pods-ImageGradient_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ImageGradient_Example-dummy.m"; sourceTree = "<group>"; };
+		82D039D3A018BEEB0A82347B0B57FF72 /* ImageGradient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageGradient-dummy.m"; sourceTree = "<group>"; };
 		83941723878F053A4D220C1046A7182E /* Pods-ImageGradient_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImageGradient_Example-resources.sh"; sourceTree = "<group>"; };
-		8F645C80C984D9800109584519EC67CA /* ImageGradient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageGradient-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		959ACADA9AC011D55AC1E75ACF83459F /* GradientShader.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = GradientShader.metal; path = ImageGradient/Classes/GradientShader.metal; sourceTree = "<group>"; };
 		973D304B443DF89556D79468BE1F0E43 /* Pods-ImageGradient_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ImageGradient_Tests-dummy.m"; sourceTree = "<group>"; };
+		9893B181AB5B03A6574FF824DEA6B21D /* ImageGradient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageGradient.modulemap; sourceTree = "<group>"; };
 		9C1446FAFB5A445BD7B375556DA5D515 /* Pods-ImageGradient_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImageGradient_Tests-resources.sh"; sourceTree = "<group>"; };
-		9C48E0094BCFE41FDBB006B22330219E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D606A858D9B13BB5D5A9A4B0A5CE303 /* ImageGradient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageGradient-prefix.pch"; sourceTree = "<group>"; };
 		9EEB4D1560949B1974490D0EAAFB5EAE /* Pods-ImageGradient_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ImageGradient_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A1243B74938F45B6FBFA389391A010CD /* Pods-ImageGradient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImageGradient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B775CA0FEB41DEDC33DFD207110630F8 /* ImageGradient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageGradient.modulemap; sourceTree = "<group>"; };
-		C3B3A185AEAA231AFA5C767A2EEEC902 /* Pods_ImageGradient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageGradient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0F102417E5CB4D1D5ECC2F4C76EA9D1 /* IGView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IGView.swift; path = ImageGradient/Classes/IGView.swift; sourceTree = "<group>"; };
+		B4A80EE772C219B3142395E39EC60297 /* ImageGradient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ImageGradient.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BD3B98A2EB2AD62A4B3A94F56FF6DA06 /* ImageGradient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageGradient.xcconfig; sourceTree = "<group>"; };
+		C3B3A185AEAA231AFA5C767A2EEEC902 /* Pods_ImageGradient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImageGradient_Example.framework; path = "Pods-ImageGradient_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8D718BF7212F31A53B39FDE97FDE4 /* Pods-ImageGradient_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImageGradient_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DA2669BA3A2D3406FD1ED55EDDAA545E /* Pods-ImageGradient_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImageGradient_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		DBBA5DE14B1C64F42FBB4819405C08B2 /* ImageGradient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageGradient.xcconfig; sourceTree = "<group>"; };
 		E062851E18E9EBA60847DF7D98F9D65B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2241F2A8A0CD2B7E089E2154986A82B /* Pods-ImageGradient_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ImageGradient_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EE06ADF765BD584148A05069FC671788 /* Pods-ImageGradient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImageGradient_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F8E9110C39160CDA6681B4A02BD79236 /* GradientShader.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = GradientShader.metal; path = ImageGradient/Classes/GradientShader.metal; sourceTree = "<group>"; };
-		FF67CE457E1651DE18ABBC303930C279 /* ImageGradient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = ImageGradient.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,19 +87,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		288EDD4859EED92B06F43EC6D2FCAB66 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3681A71B92463B91E6D66568257E8B0E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		69D2CBFAE57C0DD00C31C21816F70CEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				60DFC463FA4F9A2B23B2A116CEFD1DC6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B8302F83143B60A656B765BBDB181D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF13F5CA8B22493C84BD13BE4EB71FB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5942E9CEC75EF512DCFAECFC93E279DD /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				805006FE22ED282BE2478C2BA9B3AFC2 /* ImageGradient */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +168,12 @@
 			path = "Target Support Files/Pods-ImageGradient_Tests";
 			sourceTree = "<group>";
 		};
-		741A5389DB746A028D5DBF7933791D69 /* Pod */ = {
+		7730D7D4A84356251C62A541BB33092F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				FF67CE457E1651DE18ABBC303930C279 /* ImageGradient.podspec */,
-				081463442C6351D04A0C0490CBCB0ADA /* LICENSE */,
-				3344E18812772887594EC354477772D6 /* README.md */,
+				B4A80EE772C219B3142395E39EC60297 /* ImageGradient.podspec */,
+				51C12D42E00D63E482CBBCEAFB73BFE8 /* LICENSE */,
+				4A8432E90FDB86F47E9062B93643304C /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -172,11 +182,38 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				F51919B737C61D8EB748CE3D44DB3541 /* Development Pods */,
+				5942E9CEC75EF512DCFAECFC93E279DD /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				41494CB532A4F58E2109EF713CA16037 /* Products */,
 				E5643B45EBE7C96089DF6859C943ACDA /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		805006FE22ED282BE2478C2BA9B3AFC2 /* ImageGradient */ = {
+			isa = PBXGroup;
+			children = (
+				959ACADA9AC011D55AC1E75ACF83459F /* GradientShader.metal */,
+				550AA2450B973E9D37DB9F14E3C2211C /* IGTextugeMaker.swift */,
+				0FEBF233786A5482D0188ECC471EF36A /* IGView.swift */,
+				7730D7D4A84356251C62A541BB33092F /* Pod */,
+				833B9A57E5470A5BA2B5D44374CA710D /* Support Files */,
+			);
+			name = ImageGradient;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		833B9A57E5470A5BA2B5D44374CA710D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9893B181AB5B03A6574FF824DEA6B21D /* ImageGradient.modulemap */,
+				BD3B98A2EB2AD62A4B3A94F56FF6DA06 /* ImageGradient.xcconfig */,
+				82D039D3A018BEEB0A82347B0B57FF72 /* ImageGradient-dummy.m */,
+				73EF09BDB3597780621BF7EB41235969 /* ImageGradient-prefix.pch */,
+				3C58C4A286B8929169A84E2FF95F4770 /* ImageGradient-umbrella.h */,
+				0233F9470EB4334177E348564ADA8BC7 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ImageGradient";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -196,51 +233,9 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E931ED0D5598FE27CFF67C66E7B99308 /* ImageGradient */ = {
-			isa = PBXGroup;
-			children = (
-				F8E9110C39160CDA6681B4A02BD79236 /* GradientShader.metal */,
-				D0F102417E5CB4D1D5ECC2F4C76EA9D1 /* IGView.swift */,
-				741A5389DB746A028D5DBF7933791D69 /* Pod */,
-				F773A447B7522AA936C1A921A39BF319 /* Support Files */,
-			);
-			name = ImageGradient;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		F51919B737C61D8EB748CE3D44DB3541 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E931ED0D5598FE27CFF67C66E7B99308 /* ImageGradient */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		F773A447B7522AA936C1A921A39BF319 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B775CA0FEB41DEDC33DFD207110630F8 /* ImageGradient.modulemap */,
-				DBBA5DE14B1C64F42FBB4819405C08B2 /* ImageGradient.xcconfig */,
-				785B515BAD4EEA579ADC70CF65B091DC /* ImageGradient-dummy.m */,
-				9D606A858D9B13BB5D5A9A4B0A5CE303 /* ImageGradient-prefix.pch */,
-				8F645C80C984D9800109584519EC67CA /* ImageGradient-umbrella.h */,
-				9C48E0094BCFE41FDBB006B22330219E /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ImageGradient";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5F53280BCC5CA7AB8F9632D3923F8C24 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84A26AE67ABF46BF789C574A20F44DD9 /* ImageGradient-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D07C387CD62296318C90B904D9EDA9B1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A159FADC8C9EB6483095099828E68F /* Pods-ImageGradient_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9EB6D4AD301D036C7E9364F1D8B63E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97D1AB8C8998D47AB091DD4FEAF5AC9 /* ImageGradient-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,13 +299,13 @@
 			productReference = C3B3A185AEAA231AFA5C767A2EEEC902 /* Pods_ImageGradient_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C4B37B24755DE4BF7CC2622BFDBC2195 /* ImageGradient */ = {
+		C5E093BFE4BDC67DD923BC07D0FE023A /* ImageGradient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6985F2D9EDB1F3A9F1A578DA7438E3F /* Build configuration list for PBXNativeTarget "ImageGradient" */;
+			buildConfigurationList = D7553AEDD1BF6140D87B7DCBA5E839B2 /* Build configuration list for PBXNativeTarget "ImageGradient" */;
 			buildPhases = (
-				3CD27A3426A169CFF7D2DD2CE341001B /* Sources */,
-				288EDD4859EED92B06F43EC6D2FCAB66 /* Frameworks */,
-				5F53280BCC5CA7AB8F9632D3923F8C24 /* Headers */,
+				A18594BD82CD0E9462DBDF552C67D88B /* Sources */,
+				9B8302F83143B60A656B765BBDB181D8 /* Frameworks */,
+				EC9EB6D4AD301D036C7E9364F1D8B63E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -334,7 +337,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4B37B24755DE4BF7CC2622BFDBC2195 /* ImageGradient */,
+				C5E093BFE4BDC67DD923BC07D0FE023A /* ImageGradient */,
 				931008738BC08BB7C9B04302E183E5F2 /* Pods-ImageGradient_Example */,
 				5FE21E9E488F13CA2FC89150851F96CE /* Pods-ImageGradient_Tests */,
 			);
@@ -342,21 +345,22 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3CD27A3426A169CFF7D2DD2CE341001B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25D0F242606876846CC9C42C322ED730 /* GradientShader.metal in Sources */,
-				3FC41F3E00751DF37F3FD57E51F3B92F /* IGView.swift in Sources */,
-				4CFBE0710070C0329517E70BCEAD4DE2 /* ImageGradient-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4BB723742A735C4309A05335465E1C01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FA87B8B03CE3BA2606277CE83A1DF096 /* Pods-ImageGradient_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A18594BD82CD0E9462DBDF552C67D88B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283350CA39D4ED6B677BE0F8E2223528 /* GradientShader.metal in Sources */,
+				2E5BB6499339D8B1D8696C32015C8FAD /* IGTextugeMaker.swift in Sources */,
+				6214FC8C4DDF54460287BE652FB84883 /* IGView.swift in Sources */,
+				F8C88A99AB18EBCDE822FE8616B0F351 /* ImageGradient-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +378,7 @@
 		07D91F16329DEC2871BCADEABE94E3CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageGradient;
-			target = C4B37B24755DE4BF7CC2622BFDBC2195 /* ImageGradient */;
+			target = C5E093BFE4BDC67DD923BC07D0FE023A /* ImageGradient */;
 			targetProxy = 01C45D7116B07BB9A2CC07310FD25E60 /* PBXContainerItemProxy */;
 		};
 		A7F31F3C9BC272141E17CAAFAAAB8D50 /* PBXTargetDependency */ = {
@@ -386,6 +390,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0D919026CC06FD3CB682AF30D72BA902 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3B98A2EB2AD62A4B3A94F56FF6DA06 /* ImageGradient.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ImageGradient/ImageGradient-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageGradient/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ImageGradient/ImageGradient.modulemap";
+				PRODUCT_MODULE_NAME = ImageGradient;
+				PRODUCT_NAME = ImageGradient;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0E12B7268EF0862DFEEB8B6B0BD7C9F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,9 +521,9 @@
 			};
 			name = Release;
 		};
-		6F3629F4A34FA49DC2582308278AA19E /* Release */ = {
+		A3AAB1FCCF60DB7E4F9515BF77EA8EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBBA5DE14B1C64F42FBB4819405C08B2 /* ImageGradient.xcconfig */;
+			baseConfigurationReference = BD3B98A2EB2AD62A4B3A94F56FF6DA06 /* ImageGradient.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -517,39 +554,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		A79A42616FBE96ABD60E9BA6427B5A8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBBA5DE14B1C64F42FBB4819405C08B2 /* ImageGradient.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ImageGradient/ImageGradient-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageGradient/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageGradient/ImageGradient.modulemap";
-				PRODUCT_MODULE_NAME = ImageGradient;
-				PRODUCT_NAME = ImageGradient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		AA3D907DFE0F1DF4BD6854193B581BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -736,11 +740,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6985F2D9EDB1F3A9F1A578DA7438E3F /* Build configuration list for PBXNativeTarget "ImageGradient" */ = {
+		D7553AEDD1BF6140D87B7DCBA5E839B2 /* Build configuration list for PBXNativeTarget "ImageGradient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A79A42616FBE96ABD60E9BA6427B5A8E /* Debug */,
-				6F3629F4A34FA49DC2582308278AA19E /* Release */,
+				0D919026CC06FD3CB682AF30D72BA902 /* Debug */,
+				A3AAB1FCCF60DB7E4F9515BF77EA8EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
