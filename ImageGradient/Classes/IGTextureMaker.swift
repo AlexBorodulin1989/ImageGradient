@@ -7,9 +7,9 @@
 
 import UIKit
 
-class IGTextugeMaker: UIView {
+class IGTextureMaker: UIView {
 
-    class func createTexture(image: UIImage, device: MTLDevice) -> MTLTexture? {
+    class func createTexture(image: UIImage, device: MTLDevice) throws -> MTLTexture {
         if let imageRef = image.cgImage {
             let width = imageRef.width
             let height = imageRef.height
@@ -35,9 +35,13 @@ class IGTextugeMaker: UIView {
             
             free(rawData)
             
-            return texture
+            if texture == nil {
+                throw RuntimeError("Cannot create Texture")
+            }
+            
+            return texture!
         }
         
-        return nil
+        throw RuntimeError("Cannot create Texture")
     }
 }

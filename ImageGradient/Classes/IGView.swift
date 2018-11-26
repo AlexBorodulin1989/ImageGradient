@@ -1,11 +1,32 @@
+//
+//  IGView.swift
+//  ImageGradient
+//
+//  Created by Aleksandr Borodulin on 20/11/2018.
+//
+
 import UIKit
 
 #if !targetEnvironment(simulator)
 import Metal
-import QuartzCore
 #endif
 
 class IGView: UIView {
+    
+    private var textureImage: UIImage?
+    
+    @IBInspectable var image: UIImage? {
+        get {
+            return textureImage
+        }
+        set {
+            if self.textureImage == nil && newValue != nil {
+                self.textureImage = newValue
+                initialize()
+            }
+        }
+    }
+    
 #if !targetEnvironment(simulator)
     private let pixelFormat: MTLPixelFormat = .bgra8Unorm
     
@@ -17,37 +38,28 @@ class IGView: UIView {
     
     private var timer: CADisplayLink! = nil
     
-    struct RuntimeError: Error {
-        let message: String
-        
-        init(_ message: String) {
-            self.message = message
-        }
-        
-        public var localizedDescription: String {
-            return message
-        }
-    }
+    var texture: MTLTexture!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        //initialize()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        //initialize()
     }
     
     private func initialize() {
         device = MTLCreateSystemDefaultDevice()
         commandQueue = device.makeCommandQueue()
-        //self.backgroundColor = UIColor.blue
         
         initMetalLayer()
         initData()
         do {
             try initPipeline()
+            
+            texture = try IGTextureMaker.createTexture(image: self.textureImage!, device: device)
             
             timer = CADisplayLink(target: self, selector: #selector(loop))
             timer.add(to: .main, forMode: .defaultRunLoopMode)
@@ -84,7 +96,9 @@ class IGView: UIView {
     private func initPipeline() throws {
         guard let bundle = Bundle(identifier: "org.cocoapods.ImageGradient"),
             let path = bundle.path(forResource: "default", ofType: "metallib")
-            else { return }
+            else {
+                throw RuntimeError("Cannot create library path")
+        }
         
         let defaultLibrary = try device.makeLibrary(filepath: path)
         let vertexFunction = defaultLibrary.makeFunction(name: "gradientVertex")
@@ -120,6 +134,7 @@ class IGView: UIView {
                 renderEncoder.setRenderPipelineState(pipelineState)
                 renderEncoder.setVertexBuffer(vBuffer, offset: 0, index: 0)
                 renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
+                renderEncoder.setFragmentTexture(texture, index: 0)
                 renderEncoder.endEncoding()
                 
                 commandBuffer?.present(drawable)
