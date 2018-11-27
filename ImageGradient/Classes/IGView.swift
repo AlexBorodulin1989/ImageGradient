@@ -6,10 +6,20 @@
 //
 
 import UIKit
+import simd
 
 #if !targetEnvironment(simulator)
 import Metal
 #endif
+
+struct Vertex {
+    var x, y, z: Float!
+    var s, t: Float!
+    
+    func floatBuffer() -> [Float] {
+        return [x, y, z, s, t]
+    }
+}
 
 class IGView: UIView {
     
@@ -39,6 +49,7 @@ class IGView: UIView {
     private var timer: CADisplayLink! = nil
     
     var texture: MTLTexture!
+    var samplerState: MTLSamplerState!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -54,17 +65,16 @@ class IGView: UIView {
         device = MTLCreateSystemDefaultDevice()
         commandQueue = device.makeCommandQueue()
         
-        initMetalLayer()
-        initData()
         do {
+            initMetalLayer()
+            initData()
             try initPipeline()
-            
-            texture = try IGTextureMaker.createTexture(image: self.textureImage!, device: device)
+            try initResources()
             
             timer = CADisplayLink(target: self, selector: #selector(loop))
             timer.add(to: .main, forMode: .defaultRunLoopMode)
         } catch let error {
-            print("Failed to create pipeline state with error: \(error)")
+            print("Failed to initialize with error: \(error)")
         }
     }
     
@@ -80,14 +90,13 @@ class IGView: UIView {
     }
     
     private func initData() {
-        let vertexData:[Float] = [
-            -1.0, -1.0, 0.5,
-            -1.0, 1.0, 0.5,
-            1.0, -1.0, 0.5,
-            1.0, -1.0, 0.5,
-            -1.0, 1.0, 0.5,
-            1.0, 1.0, 0.5
-        ]
+        var vertexData = [Float]()
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: -1.0, z: 0.5, s: 0.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, z: 0.5, s: 0.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, z: 0.5, s: 1.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, z: 0.5, s: 1.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, z: 0.5, s: 0.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, z: 0.5, s: 1.0, t: 0.0).floatBuffer())
         
         let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
         vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModePrivate)
@@ -120,6 +129,18 @@ class IGView: UIView {
         try pipelineState = device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
     }
     
+    private func initResources() throws {
+        texture = try IGTextureMaker.createTexture(image: textureImage!, device: device)
+        
+        let samplerDesc = MTLSamplerDescriptor()
+        samplerDesc.sAddressMode = .clampToEdge
+        samplerDesc.tAddressMode = .clampToEdge
+        samplerDesc.minFilter = .nearest
+        samplerDesc.magFilter = .linear
+        samplerDesc.mipFilter = .notMipmapped
+        samplerState = device.makeSamplerState(descriptor: samplerDesc)
+    }
+    
     private func render() {
         autoreleasepool {
             let renderPassDescriptor = MTLRenderPassDescriptor()
@@ -131,10 +152,14 @@ class IGView: UIView {
             let commandBuffer = commandQueue.makeCommandBuffer()
             
             if let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
-                renderEncoder.setRenderPipelineState(pipelineState)
-                renderEncoder.setVertexBuffer(vBuffer, offset: 0, index: 0)
+                renderEncoder.setRenderPipelineState(self.pipelineState)
+                renderEncoder.setVertexBuffer(self.vBuffer, offset: 0, index: 0)
+                
+                renderEncoder.setFragmentTexture(self.texture, index: 0)
+                renderEncoder.setFragmentSamplerState(self.samplerState, index: 0)
+                
                 renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
-                renderEncoder.setFragmentTexture(texture, index: 0)
+                
                 renderEncoder.endEncoding()
                 
                 commandBuffer?.present(drawable)

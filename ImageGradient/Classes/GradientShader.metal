@@ -8,21 +8,33 @@
 #include <metal_stdlib>
 using namespace metal;
 
+struct VertexIn
+{
+    packed_float3 position;
+    packed_float2 texCoord;
+};
+
 struct Vertex
 {
     float4 position [[position]];
-    float4 color;
+    float gradient;
+    float2 texCoord;
 };
 
-vertex Vertex gradientVertex(const device packed_float3* vertex_array [[ buffer(0) ]],
+vertex Vertex gradientVertex(const device VertexIn* vertex_array [[ buffer(0) ]],
                              unsigned int vid [[ vertex_id ]]) {
+    VertexIn vertexIn = vertex_array[vid];
     Vertex vertexOut;
-    vertexOut.position = float4(vertex_array[vid], 1.0);
+    vertexOut.texCoord = vertexIn.texCoord;
+    vertexOut.position = float4(vertexIn.position, 1.0);
     float gradient = (vertexOut.position.y + 1) * 0.5;
-    vertexOut.color = float4(0.0, 1.0, 0.0, gradient);
+    vertexOut.gradient = gradient;
     return vertexOut;
 }
 
-fragment half4 gradientFragment(Vertex inVertex [[stage_in]]) {
-    return half4(inVertex.color);
+fragment float4 gradientFragment(Vertex inVertex [[stage_in]],
+                                texture2d<float> tex [[texture(0)]],
+                                sampler samplr [[sampler(0)]]) {
+    float3 diffuseColor = tex.sample(samplr, inVertex.texCoord).rgb;
+    return float4(diffuseColor, inVertex.gradient);
 }
