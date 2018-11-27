@@ -32,7 +32,9 @@ class IGView: UIView {
         set {
             if self.textureImage == nil && newValue != nil {
                 self.textureImage = newValue
-                initialize()
+#if !targetEnvironment(simulator)
+                self.initialize()
+#endif
             }
         }
     }

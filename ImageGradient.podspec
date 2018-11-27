@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/AlexBorodulin1989/ImageGradient'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Aleksandr Borodulin' => 'aleksanderborodoolin@mail.ru' }
-  s.source           = { :git => 'https://github.com/AlexBorodulin1989/ImageGradient.git', :tag => s.version }
+  s.source           = { :git => 'https://github.com/AlexBorodulin1989/ImageGradient.git', :tag => 'v' + s.version.to_s }
   s.swift_version    = '4.0'
 
   s.ios.deployment_target = '12.0'
