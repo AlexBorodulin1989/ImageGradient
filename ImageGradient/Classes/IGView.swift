@@ -86,6 +86,8 @@ class IGView: UIView {
         metalLayer.framebufferOnly = true
         metalLayer.frame = self.layer.frame
         metalLayer.backgroundColor = UIColor.clear.cgColor
+        metalLayer.isOpaque = false
+        self.layer.isOpaque = false
         self.layer.addSublayer(metalLayer)
     }
     
@@ -127,6 +129,8 @@ class IGView: UIView {
         pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
         
         try pipelineState = device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+        
+        self.isOpaque = false
     }
     
     private func initResources() throws {
@@ -142,12 +146,13 @@ class IGView: UIView {
     }
     
     private func render() {
+        self.isOpaque = false
         autoreleasepool {
             let renderPassDescriptor = MTLRenderPassDescriptor()
             guard let drawable = metalLayer.nextDrawable() else { return }
             renderPassDescriptor.colorAttachments[0].texture = drawable.texture
             renderPassDescriptor.colorAttachments[0].loadAction = .clear
-            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
             
             let commandBuffer = commandQueue.makeCommandBuffer()
             

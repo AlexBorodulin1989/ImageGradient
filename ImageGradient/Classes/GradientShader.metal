@@ -35,6 +35,6 @@ vertex Vertex gradientVertex(const device VertexIn* vertex_array [[ buffer(0) ]]
 fragment float4 gradientFragment(Vertex inVertex [[stage_in]],
                                 texture2d<float> tex [[texture(0)]],
                                 sampler samplr [[sampler(0)]]) {
-    float3 diffuseColor = tex.sample(samplr, inVertex.texCoord).rgb;
-    return float4(diffuseColor, inVertex.gradient);
+    float3 imageColor = tex.sample(samplr, inVertex.texCoord).rgb;
+    return float4(imageColor, inVertex.gradient);
 }
