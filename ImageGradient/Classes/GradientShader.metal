@@ -14,17 +14,17 @@ struct VertexIn
     packed_float2 texCoord;
 };
 
-struct Vertex
+struct VertexOut
 {
     float4 position [[position]];
     float gradient;
     float2 texCoord;
 };
 
-vertex Vertex gradientVertex(const device VertexIn* vertex_array [[ buffer(0) ]],
+vertex VertexOut gradientVertex(const device VertexIn* vertex_array [[ buffer(0) ]],
                              unsigned int vid [[ vertex_id ]]) {
     VertexIn vertexIn = vertex_array[vid];
-    Vertex vertexOut;
+    VertexOut vertexOut;
     vertexOut.texCoord = vertexIn.texCoord;
     vertexOut.position = float4(vertexIn.position, 1.0);
     float gradient = (vertexOut.position.y + 1) * 0.5;
@@ -32,9 +32,9 @@ vertex Vertex gradientVertex(const device VertexIn* vertex_array [[ buffer(0) ]]
     return vertexOut;
 }
 
-fragment float4 gradientFragment(Vertex inVertex [[stage_in]],
+fragment float4 gradientFragment(VertexOut outVertex [[stage_in]],
                                 texture2d<float> tex [[texture(0)]],
                                 sampler samplr [[sampler(0)]]) {
-    float3 imageColor = tex.sample(samplr, inVertex.texCoord).rgb;
-    return float4(imageColor, inVertex.gradient);
+    float3 pixelColor = tex.sample(samplr, outVertex.texCoord).rgb;
+    return float4(pixelColor, outVertex.gradient);
 }

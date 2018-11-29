@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import simd
 
 #if !targetEnvironment(simulator)
 import Metal
@@ -52,16 +51,6 @@ class IGView: UIView {
     
     var texture: MTLTexture!
     var samplerState: MTLSamplerState!
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        //initialize()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        //initialize()
-    }
     
     private func initialize() {
         device = MTLCreateSystemDefaultDevice()
