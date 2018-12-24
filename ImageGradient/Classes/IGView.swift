@@ -12,11 +12,11 @@ import Metal
 #endif
 
 struct Vertex {
-    var x, y, z: Float!
+    var x, y: Float!
     var s, t: Float!
     
     func floatBuffer() -> [Float] {
-        return [x, y, z, s, t]
+        return [x, y, s, t]
     }
 }
 
@@ -84,12 +84,12 @@ class IGView: UIView {
     
     private func initData() {
         var vertexData = [Float]()
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: -1.0, z: 0.5, s: 0.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, z: 0.5, s: 0.0, t: 0.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, z: 0.5, s: 1.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, z: 0.5, s: 1.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, z: 0.5, s: 0.0, t: 0.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, z: 0.5, s: 1.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: -1.0, s: 0.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, s: 1.0, t: 0.0).floatBuffer())
         
         let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
         vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModePrivate)

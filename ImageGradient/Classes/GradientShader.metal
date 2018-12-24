@@ -10,7 +10,7 @@ using namespace metal;
 
 struct VertexIn
 {
-    packed_float3 position;
+    packed_float2 position;
     packed_float2 texCoord;
 };
 
@@ -26,7 +26,7 @@ vertex VertexOut gradientVertex(const device VertexIn* vertex_array [[ buffer(0)
     VertexIn vertexIn = vertex_array[vid];
     VertexOut vertexOut;
     vertexOut.texCoord = vertexIn.texCoord;
-    vertexOut.position = float4(vertexIn.position, 1.0);
+    vertexOut.position = float4(vertexIn.position, 0.5, 1.0);
     float gradient = (vertexOut.position.y + 1) * 0.5;
     vertexOut.gradient = gradient;
     return vertexOut;
