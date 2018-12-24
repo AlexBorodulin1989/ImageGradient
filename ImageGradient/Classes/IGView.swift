@@ -14,9 +14,10 @@ import Metal
 struct Vertex {
     var x, y: Float!
     var s, t: Float!
+    var alpha: Float!
     
     func floatBuffer() -> [Float] {
-        return [x, y, s, t]
+        return [x, y, s, t, alpha]
     }
 }
 
@@ -38,6 +39,53 @@ class IGView: UIView {
         }
     }
     
+    private var _topLeftAlpha: Float = 1.0
+    private var _topRightAlpha: Float = 1.0
+    private var _bottomLeftAlpha: Float = 1.0
+    private var _bottomRightAlpha: Float = 1.0
+    
+    @IBInspectable var topLeftAlpha: Float {
+        get {
+            return _topLeftAlpha
+        }
+        set {
+            _topLeftAlpha = max(0, min(1, newValue))
+            updateData()
+        }
+    }
+    
+    @IBInspectable var topRightAlpha: Float {
+        get {
+            return _topRightAlpha
+        }
+        set {
+            _topRightAlpha = max(0, min(1, newValue))
+            updateData()
+        }
+    }
+    
+    @IBInspectable var bottomLeftAlpha: Float {
+        get {
+            return _bottomLeftAlpha
+        }
+        set {
+            _bottomLeftAlpha = max(0, min(1, newValue))
+            updateData()
+        }
+    }
+    
+    @IBInspectable var bottomRightAlpha: Float {
+        get {
+            return _bottomRightAlpha
+        }
+        set {
+            _bottomRightAlpha = max(0, min(1, newValue))
+            updateData()
+        }
+    }
+    
+    private var timer: CADisplayLink? = nil
+    
 #if !targetEnvironment(simulator)
     private let pixelFormat: MTLPixelFormat = .bgra8Unorm
     
@@ -46,8 +94,6 @@ class IGView: UIView {
     private var vBuffer: MTLBuffer! = nil
     private var pipelineState: MTLRenderPipelineState! = nil
     private var commandQueue: MTLCommandQueue! = nil
-    
-    private var timer: CADisplayLink! = nil
     
     var texture: MTLTexture!
     var samplerState: MTLSamplerState!
@@ -63,7 +109,7 @@ class IGView: UIView {
             try initResources()
             
             timer = CADisplayLink(target: self, selector: #selector(loop))
-            timer.add(to: .main, forMode: .defaultRunLoopMode)
+            timer?.add(to: .main, forMode: .defaultRunLoopMode)
         } catch let error {
             print("Failed to initialize with error: \(error)")
         }
@@ -82,14 +128,14 @@ class IGView: UIView {
         self.layer.addSublayer(metalLayer)
     }
     
-    private func initData() {
+    fileprivate func initData() {
         var vertexData = [Float]()
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: -1.0, s: 0.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0).floatBuffer())
-        vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, s: 1.0, t: 0.0).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: -1.0, s: 0.0, t: 1.0, alpha: bottomLeftAlpha).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0, alpha: topLeftAlpha).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0, alpha: bottomRightAlpha).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: -1.0, s: 1.0, t: 1.0, alpha: bottomRightAlpha).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: -1.0, y: 1.0, s: 0.0, t: 0.0, alpha: topLeftAlpha).floatBuffer())
+        vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, s: 1.0, t: 0.0, alpha: topRightAlpha).floatBuffer())
         
         let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
         vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModePrivate)
@@ -162,7 +208,7 @@ class IGView: UIView {
                 commandBuffer?.commit()
             }
             
-            timer.isPaused = true
+            timer?.isPaused = true
         }
     }
     
@@ -170,4 +216,13 @@ class IGView: UIView {
         self.render()
     }
 #endif
+}
+
+extension IGView {
+    func updateData() {
+#if !targetEnvironment(simulator)
+        initData()
+        timer?.isPaused = false
+#endif
+    }
 }
