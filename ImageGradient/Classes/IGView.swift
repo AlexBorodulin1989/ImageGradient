@@ -138,7 +138,7 @@ class IGView: UIView {
         vertexData.append(contentsOf: Vertex(x: 1.0, y: 1.0, s: 1.0, t: 0.0, alpha: topRightAlpha).floatBuffer())
         
         let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
-        vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModePrivate)
+        vBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: .storageModeShared)
     }
     
     private func initPipeline() throws {
